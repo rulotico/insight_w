@@ -1,0 +1,21 @@
+{
+  "name": "INSIGHT",
+  "version": "0.0.0",
+  "authors": [
+    "rulotico <rulotico@gmail.com>"
+  ],
+  "description": "Pagina web insight",
+  "main": "index.html",
+  "keywords": [
+    "insight"
+  ],
+  "license": "MIT",
+  "homepage": "Insight*",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
