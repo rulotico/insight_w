@@ -21,8 +21,8 @@ $( window ).scroll(function() {
 
             if ( s > hh ) {
               console.log("hola");
-              $(".side_r").animate({left:100},2000);
-              $(".side_l").animate({left:-90},2000);
+              $(".side_r").animate({left:42},2000);
+              $(".side_l").animate({right:60},2000);
 
             };
 
@@ -31,10 +31,12 @@ $( window ).scroll(function() {
 
 
 
+//MENU HIDE
 
-
-
-
+$("#wrapper").toggleClass("toggled");
+$(".logo").animate({left:-159},1000);
+           $(".social").animate({left:159},1200);
+           $(".ligh-flags").animate({left:20},1200);
 
 // MENU TOOGLE 
 
