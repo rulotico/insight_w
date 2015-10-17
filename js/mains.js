@@ -35,8 +35,10 @@ $( window ).scroll(function() {
 
 $("#wrapper").toggleClass("toggled");
 $(".logo").animate({left:-159},1000);
-           $(".social").animate({left:159},1200);
-           $(".ligh-flags").animate({left:20},1200);
+$(".social").animate({left:159},1200);
+$(".ligh-flags").animate({left:20},1200);
+// $(".menu").animate({left:-159},600);
+
 
 // MENU TOOGLE 
 

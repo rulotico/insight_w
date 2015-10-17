@@ -60,6 +60,7 @@
 
 html, body{
  background-color: #F7F7F7;
+     height: 100%;
 }
 
 .headpic{
@@ -69,6 +70,11 @@ html, body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.tool{
+    position: absolute;
+z-index: 5000;
 }
 
 .h_cero{
@@ -198,12 +204,12 @@ letter-spacing: 1px;
 
 .serv{
     position: relative;
-    top: -250px;
+    top: -360px;
 }
 
 .serv_t{
     position: relative;
-    top: -132px;
+    top: -232px;
     z-index: 30;
     font-size: 80px;
     font-family: c_black;
@@ -216,10 +222,43 @@ letter-spacing: 1px;
         padding-top: 150px;
     padding-bottom: 35px;
     font-family: c_black;
-    color: #717171;
+    color: #9E9E9E;
     font-size: 16px;
 
 }
+
+
+.content_serv div{ 
+    padding-bottom: 20px;
+}
+
+.content_serv a{ 
+    color: #07E0E0;
+}
+
+.content_serv a:hover, 
+.content_serv a:active{ 
+    color: #3AFEFF;
+    text-decoration: none;
+}
+
+
+.slide{
+    position: relative;
+    top: -360px;
+
+}
+
+
+
+.foot{
+    position: relative;
+    top: -234px;
+
+}
+
+
+
 
 /*SIDE BAR*/
 
@@ -263,6 +302,7 @@ letter-spacing: 1px;
 }
 
 #page-content-wrapper {
+    height: 100px;
     width: 100%;
     position: absolute;
     /*padding: 15px;*/
@@ -346,7 +386,32 @@ letter-spacing: 1px;
     }
 
     #wrapper.toggled #page-content-wrapper {
-        position: relative;
+        /*position: relative;*/
         margin-right: 0;
     }
 }
+
+/*Carousel*/
+.carousel .item {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
+}
+.carousel .item img {
+    width: 100%; /*img width*/
+}
+/*add some makeup*/
+.carousel .carousel-control {
+    background: none;
+    border: none;
+    top: 30%;
+    font-size: 150px;
+    font-family: monospace;
+}
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
