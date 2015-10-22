@@ -104,7 +104,18 @@ z-index: 5000;
 
 .menu{
 letter-spacing: 1px;
+color: #868386;
 }
+
+#servicios, #quien, #book, #contacto {
+    cursor: pointer;
+}
+
+.menu div:hover{
+    color: #3AFEFF;
+}
+
+
 
 .social{
 	 position: fixed;
@@ -162,6 +173,8 @@ letter-spacing: 1px;
     padding: 41px;
     box-shadow: 0px 0px 5px #797979;
 
+    min-height: 370px;
+
 }
 
 .cube img{
@@ -171,10 +184,11 @@ letter-spacing: 1px;
 
 .titles{
 	font-family: c_black;
-    font-size: 21px;
+    font-size: 29px;
 	z-index: 20;
     position: relative;
     top: -203px;
+    color: white;
 }
 
 .detail1{
@@ -194,12 +208,16 @@ letter-spacing: 1px;
 
 
 .s_right{
-    background-color: #E4E4E4;
+    background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJElEQVQIW2Pk5+f/z4AEGGECoqKiDK9fv2YAC8A4IIVwFTBdAG/VCrVTwt/uAAAAAElFTkSuQmCC
+    ) repeat;
 }
 
 
 .s_left{
-    background-color: #F2F2F2;
+     background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJUlEQVQIW2NUUVH5z4AEGEECd+7cYVBRUQELgwVADJggXACmCwCqWwuxxp0wKwAAAABJRU5ErkJggg==
+    ) repeat;
 }
 
 .serv{
@@ -213,7 +231,7 @@ letter-spacing: 1px;
     z-index: 30;
     font-size: 80px;
     font-family: c_black;
-    color: #252528;
+    color: #F9FAFA;
     padding-left: 200px;
 }
 
@@ -230,6 +248,9 @@ letter-spacing: 1px;
 
 .content_serv div{ 
     padding-bottom: 20px;
+        font-family: c_book;
+    letter-spacing: 1px;
+    color: #00FFFA;
 }
 
 .content_serv a{ 
@@ -253,13 +274,79 @@ letter-spacing: 1px;
 
 .foot{
     position: relative;
-    top: -234px;
+    top: -278px;
 
 }
 
+.btn_contact{
+/*background: url(../images/mail.png) center;
+background-color: black;
+height: 100px;
+width: 100px;
 
 
 
+border-radius: 58px;
+cursor: pointer;
+*/
+    margin-bottom: 20px;
+    z-index: 1000;
+    top: -38px;
+    position: absolute;
+    left: 44%;
+
+    width: 100px;
+    height: 100px;
+    background: #121212;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+     transition:all 1s;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+
+}
+
+.btn_contact:hover{
+    left:27%;
+    top: -250px;
+    border-radius:0%;
+    width: 300px;
+    height: 350px;
+    margin-bottom: 0px;
+    padding: 20px;
+
+}
+
+.icn_mail{
+    padding-top: 32px;
+}
+
+.legal{
+    font-size: 14px;
+}
+
+.form {
+    display: none;
+
+}
+
+.f1, .f2, .f3{
+    opacity: 0;
+    margin-bottom: 10px;
+}
+
+#mailto{
+    cursor: pointer;
+}
+
+.env{
+    padding-left: 5px;
+    display: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
 /*SIDE BAR*/
 
 /*!

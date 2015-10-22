@@ -33,10 +33,10 @@ $( window ).scroll(function() {
 
 //MENU HIDE
 
-$("#wrapper").toggleClass("toggled");
-$(".logo").animate({left:-159},1000);
-$(".social").animate({left:159},1200);
-$(".ligh-flags").animate({left:20},1200);
+// $("#wrapper").toggleClass("toggled");
+// $(".logo").animate({left:-159},1000);
+// $(".social").animate({left:159},1200);
+// $(".ligh-flags").animate({left:20},1200);
 // $(".menu").animate({left:-159},600);
 
 
@@ -61,6 +61,76 @@ $("#menu-toggle").click(function(e) {
        	}
 
     });
+
+
+
+//MENU FUNCTIONS
+
+//BTNS
+
+
+
+$("#quien").click(function(){
+  $('html, body').animate({
+        scrollTop: $(".titles").offset().top -20
+    }, 1000);
+});
+
+
+$("#servicios").click(function(){
+  $('html, body').animate({
+        scrollTop: $(".serv_t").offset().top -20
+    }, 1000);
+});
+
+$("#book").click(function(){
+  $('html, body').animate({
+        scrollTop: $(".carousel").offset().top -20
+    }, 1000);
+});
+
+$("#contacto").click(function(){
+  $('html, body').animate({
+        scrollTop: $(".btn_contact").offset().top -20
+    }, 1000);
+});
+
+//hover
+$("#quien").mouseover(function(){
+  $("#l1").css("background-color","#3AFEFF");
+}).mouseleave(function(){
+  $("#l1").css("background-color","#E5E5E5");
+});
+
+
+$("#servicios").mouseover(function(){
+$("#l2").css("background-color","#3AFEFF");
+}).mouseleave(function(){
+  $("#l2").css("background-color","#E5E5E5");
+});
+
+$("#book").mouseover(function(){
+$("#l3").css("background-color","#3AFEFF");
+}).mouseleave(function(){
+  $("#l3").css("background-color","#E5E5E5");
+});
+
+$("#contacto").mouseover(function(){
+$("#l4").css("background-color","#3AFEFF");
+}).mouseleave(function(){
+  $("#l4").css("background-color","#E5E5E5");
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 //SOCIAL
@@ -103,5 +173,45 @@ $(this).animate({opacity:1},500);
 // SIDES
 
 
+
+
+
+//contact
+$(".btn_contact").mouseover(function(){
+$(".icn_mail").animate({paddingTop:32},500); 
+$(".env").css("display","inherit");
+$(".form").css("display","initial");
+$(".f1,.f2,.f3").css("opacity",1);
+
+});
+
+
+$(".btn_contact").mouseleave(function(){
+$(".form").css("display","none");
+$(".env").css("display","none");
+$(".icn_mail").animate({paddingTop:32},200); 
+
+});
+
+
+
+
+
+
+
+
+//PULSE FOR BUTTONS{
+
+function pulse(id){
+ 
+$(id).mouseover(function(){
+  $(this).addClass("animated pulse");
+});
+
+$(id).mouseleave(function(){
+  $(this).removeClass("animated pulse");
+});
+console.log("hola");
+}
 
 
