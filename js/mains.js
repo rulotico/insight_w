@@ -215,3 +215,39 @@ console.log("hola");
 }
 
 
+
+var frases=[
+   "n. <span class='cyan' nm='0' id='item-frase'>The power</span> or act of seeing into a situation",
+   "n. <span class='cyan' nm='1' id='item-frase'>The power</span> po",
+   "n. <span class='cyan' nm='2' id='item-frase'>The power</span> pj",
+   "n. <span class='cyan' nm='3' id='item-frase'>The power</span> osdn",
+   "n. <span class='cyan' nm='4' id='item-frase'>The power</span> uation",
+]
+
+
+
+$(".frase").append(frases[0]);
+
+function change(){
+  nm=$("#item-frase").attr("nm");
+  nm=parseInt(nm);
+
+  var loong=frases.length;
+  $(".frase").empty();
+
+  
+    if (nm + 2 <= loong) {
+      $(".frase").append(frases[nm+1]);
+    } else{
+      $(".frase").append(frases[0]);
+    };
+  
+
+
+
+}
+
+
+
+
+
