@@ -63,6 +63,17 @@ html, body{
      height: 100%;
 }
 
+a{
+    color: #00C9C9;
+
+    
+}
+
+a:hover, a:active, a:focus{
+    color:#076CC9;
+    text-decoration: none !important;
+}
+
 .headpic{
 	background-color: #252528;
 	 background: url(../images/fondo.png) no-repeat center center fixed; 
@@ -173,7 +184,7 @@ color: #868386;
     padding: 41px;
     box-shadow: 0px 0px 5px #797979;
 
-    min-height: 370px;
+   
 
 }
 
@@ -185,10 +196,7 @@ color: #868386;
 .titles{
 	font-family: c_black;
     font-size: 29px;
-	z-index: 20;
-    position: relative;
-    top: -203px;
-    color: white;
+    color: #504F4F;
 }
 
 .detail1{
@@ -233,6 +241,14 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJUlEQVQIW2
     font-family: c_black;
     color: #F9FAFA;
     padding-left: 200px;
+}
+
+.title_s{
+    font-size: 80px;
+    font-family: c_black !important;
+    color: #F9FAFA !important;
+    display: none;
+
 }
 
 
@@ -495,10 +511,153 @@ cursor: pointer;
     font-family: monospace;
 }
 /*full width container*/
+
+
+@media( max-width: 970px){
+    .serv_t{
+        font-size: 73px;
+ }
+
+}
+
+
+@media( max-width: 800px){
+    .serv_t{
+    display: none;
+}
+
+.serv{
+     top: -126px;
+
+}
+
+.title_s{
+    display: inherit;
+}
+
+}
+
+
+
 @media (max-width: 767px) {
     .block {
         margin-left: -20px;
         margin-right: -20px;
     }
+
+    .logo{
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+          display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+          display: -ms-flexbox;      /* TWEENER - IE 10 */
+          display: -webkit-flex;     /* NEW - Chrome */
+          display: inline-flex;  
+    }
+    #menu-toggle{
+        padding-right: 0px;
+    }
+    .content_serv{
+        padding-top:0px; 
+    }
+    .slide{
+        top: -127px;
+    }
+
+    .foot{
+        top: -57px;
+    }
+    
+    .btn_contact{
+        left: 37%;
+    }
+
+    .legal{
+            margin-top: 77px;
+    margin-bottom: 20px;
+    }
+    .left, .right{
+        display: none;
+    }
+
 }
 
+@media( max-width: 641px){
+
+.sides{
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: inline-flex;  
+    height: auto;
+    top: -160px;
+    padding-left: auto;
+}
+
+.sides img {
+    height: 300px;
+}
+
+
+
+}
+
+
+
+
+
+@media (width: 1200px ){
+
+.cube{
+   
+    min-height: 370px;
+
+}
+
+
+}
+
+@media (max-width: 1200px ){
+
+.cube{
+   
+    min-height: 340px;
+
+}
+
+
+}
+
+@media (max-width: 1100px ){
+
+.cube{
+   
+    min-height: 361px;
+
+}
+
+
+}
+
+@media (max-width: 1051px ){
+
+.cube{
+   
+    min-height: 382px;
+
+}
+
+
+}
+
+
+
+@media (width: 1300px ){
+
+.cube{
+   
+    min-height:100px;
+
+}
+
+
+}

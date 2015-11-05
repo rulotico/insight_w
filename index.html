@@ -12,7 +12,6 @@
 	<!--  Dependencies  -->
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
-
 	<script src="bower_components/angular/angular.js"></script>
 	
 </head>
@@ -21,12 +20,12 @@
 	<div class="logo">
 				
 				<div class="col-md-6 frase gray frase"></div>
-				<div class="col-md-6" id="menu-toggle"><img src="images/logo.png" alt=""></div>
+				<div class="col-md-6 " id="menu-toggle"><img src="images/logo.png" alt=""></div>
 
 			</div>
 			<div class="social">
-				<img id="face" src="images/face.png" alt=""><br>
-				<img id="twitter" src="images/twitter.png" alt="">
+				<a href="https://www.facebook.com/InsightAds" target="_blank"><img id="face" src="images/face.png" alt=""></a><br>
+				<a href="https://twitter.com/InsightAds" target="_blank"><img id="twitter" src="images/twitter.png" alt=""></a>
 			</div>
 
 			<div class="ligh-flags">
@@ -79,19 +78,13 @@
 
 							<!-- /#content -->
 
-						   <div class="row titles">
-								<div class="col-md-1"></div>
-								<div class="col-md-4 text-center">WHO</div>
-								<div class="col-md-2"></div>
-								<div class="col-md-4 text-center">HOW</div>
-								<div class="col-md-1"></div>
-							</div>
+						  
 
 							<div class="row main">
 								
 								<div class="col-md-1"></div>
 								<div class="col-md-4 cube text-justify">
-								
+								<div class="titles">HOW</div>
 								<p class="detail1">Somos una <strong class="cyan_t c_black">Agencia Creativa</strong> que a partir de un <strong class="cyan_t c_black">Insight</strong> generamos estrategias de <strong class="c_black">Marketing y Publicidad</strong>,  enfocados a desarrollar proyectos efectivos y rentables a través de plataformas <strong class="cyan_t c_black">tradicionales y digitales</strong>.
 								<br>
 								<br>
@@ -104,7 +97,8 @@
 								</div>
 								<div class="col-md-2"></div>
 								<div class="col-md-4 cube text-justify">
-									
+
+									  <div class="titles">WHO</div>
 									  <p><strong class=" c_black">Identificamos y analizamos</strong> los datos clave de tu marca para construir la <strong class="c_black cyan_t">estrategia</strong> que necesitas.
 										
 										Desarrollamos estrategias creativas, eficientes y de <strong>gran impacto</strong>.
@@ -138,6 +132,7 @@
 						   <div class="row serv">
 							   <div class="col-md-6 text-right s_right">
 									<div class="content_serv">
+										<div class="title_s">BTL</div>
 										<div>Activiación de marca <img src="images/bill.png"></div>
 										<div>Creatividad BTL <img src="images/bill.png"></div>
 										<div>Producción de Eventos <img src="images/bill.png"></div>
@@ -145,7 +140,7 @@
 										<div>Promoción y puntos de venta <img src="images/bill.png"></div>
 										<div>Modelos y edecanes <img src="images/bill.png"></div>
 										<div>Administración de personal <img src="images/bill.png"></div>
-										<a id="btl" href="">[+]ver</a>
+										<!-- <a id="btl" href="">[+]ver</a> -->
 									</div>
 									
 
@@ -153,7 +148,7 @@
 							   </div>
 							   <div class="col-md-6 text-left s_left">
 								   <div class="content_serv">
-
+										<div class="title_s">DIGITAL</div>
 										<div> <img src="images/compu_2.png"> Consultoría Digital</div>
 										<div><img src="images/compu_2.png"> Estrategias Online</div>
 										<div><img src="images/compu_2.png"> Publicidad en Buscadores</div>
@@ -161,7 +156,7 @@
 										<div><img src="images/compu_2.png"> Estrategias y manejo de Redes Sociales</div>
 										<div><img src="images/compu_2.png"> Publicidad en Redes Sociales</div>
 										<div><img src="images/compu_2.png"> Desarrollo de mobile apps</div>
-										<a href="" id="digital">[+]ver</a>
+										<!-- <a href="" id="digital">[+]ver</a> -->
 										
 									</div>
 							   </div>
@@ -181,13 +176,13 @@
 								<div id="myCarousel" class="carousel slide">
 									<div class="carousel-inner">
 										<div class="active item">
-											<img src="http://lorempixel.com/1024/750" alt="Slide1" />
+											<img src="images/btl/btl.jpg" alt="Slide1" />
 										</div>
 										<div class="item">
-											<img src="http://lorempixel.com/1024/750" alt="Slide2" />
+											<img src="images/btl/btl.jpg" alt="Slide2" />
 										</div>
 										<div class="item">
-											<img src="http://lorempixel.com/1024/750" alt="Slide3" />
+											<img src="images/btl/btl.jpg" alt="Slide3" />
 										</div>
 									</div>
 											<a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
@@ -200,9 +195,9 @@
 				<div class="col-md-6 text-center">
 					<div class="btn_contact">
 						<div class="form">
-							<input type="text" class="form-control f1" placeholder="Name" aria-describedby="sizing-addon2">
-							<input type="text" class="form-control f2" placeholder="Mail" aria-describedby="sizing-addon2">
-							<textarea class="form-control custom-control f3" placeholder="Say hi" rows="6" style=""></textarea>
+							<input id="name" type="text" class="form-control f1" placeholder="Name" aria-describedby="sizing-addon2">
+							<input id ="mail" type="text" class="form-control f2" placeholder="Mail" aria-describedby="sizing-addon2">
+							<textarea id="msj" class="form-control custom-control f3" placeholder="Say hi" rows="6" style=""></textarea>
 						</div>
 
 						<img id="mailto" class="icn_mail" src="images/mail.png" alt="">
@@ -211,7 +206,7 @@
 					</div>  
 
 				</div>
-				<div class="col-md-3 text-right legal cyan">INSIGHT | ® 55-24-23-23 | hi@insightads.mx </div>
+				<div class="col-md-3 text-right legal cyan">INSIGHT® |  <a href="#">55-24-23-23</a> | <a href="mailto:contacto@insightads.mx">contacto@insightads.mx</a> </div>
 			</div>
 
 
@@ -229,6 +224,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="bower_components/router.js/dist/router.min.js"></script>
+<script type="text/javascript" src="bower_components/scrollpoint/jquery.scrollpoint.js"></script>
 <script src="js/mains.js"></script>	
 </body>
 

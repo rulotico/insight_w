@@ -1,31 +1,48 @@
 var h=$(window).height();
 $(".headpic").css("height",h)
 
-console.log(h);
+console.log("h:"+h);
 
-
+screen_w=$( window ).width();
 
 
 //Scroll
 
+
+
+
 var hh = h*.5;
+var s;
+
+
+
+
 
 $( window ).scroll(function() {
-  				var s=$(window).scrollTop();
-  				console.log(s);
-          
+
+          if(screen_w < 640){
+
+            left_c=30;
+            right_c=30;
+
+            }else{
+
+            left_c=42;
+            right_c=60;
+
+            }
 
 
-
-
+  				 s=$(window).scrollTop();
+  				console.log("s:"+s);
 
             if ( s > hh ) {
-              console.log("hola");
-              $(".side_r").animate({left:42},2000);
-              $(".side_l").animate({right:60},2000);
-
+              
+              $(".side_r").animate({left:left_c},2000);
+              $(".side_l").animate({right:right_c},2000);
             };
 
+          
 
 });
 
@@ -42,23 +59,47 @@ $( window ).scroll(function() {
 
 // MENU TOOGLE 
 
+
+  function abrir(){
+            
+            $("#wrapper").toggleClass("toggled");
+            $(".logo").animate({left:-159},1000);
+           $(".social").animate({left:159},1200);
+           $(".ligh-flags").animate({left:20},1200);
+            flagT=false;
+  }
+
+  function cerrar(){
+          
+           $("#wrapper").toggleClass("toggled");
+          $(".logo").animate({left:0},1000);
+          $(".social").animate({left:314},900);
+          $(".ligh-flags").animate({left:156},300);
+          flagT=true;
+          change();
+
+  }
+
+
+
+
+
+
+
+
 flagT=true;
 
-$("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-       
+$("#menu-toggle").click(function() {
+
+        
        	if (flagT==true) {
-       		 $(".logo").animate({left:-159},1000);
-       		 $(".social").animate({left:159},1200);
-       		 $(".ligh-flags").animate({left:20},1200);
-        	flagT=false;
+       		 abrir();
        	}else{
-       		$(".logo").animate({left:0},1000);
-       		$(".social").animate({left:314},900);
-       		$(".ligh-flags").animate({left:156},300);
-        	flagT=true;
+       		cerrar();
+
        	}
+
+
 
     });
 
@@ -71,6 +112,7 @@ $("#menu-toggle").click(function(e) {
 
 
 $("#quien").click(function(){
+  abrir();
   $('html, body').animate({
         scrollTop: $(".titles").offset().top -20
     }, 1000);
@@ -78,18 +120,21 @@ $("#quien").click(function(){
 
 
 $("#servicios").click(function(){
+  abrir();
   $('html, body').animate({
         scrollTop: $(".serv_t").offset().top -20
     }, 1000);
 });
 
 $("#book").click(function(){
+  abrir();
   $('html, body').animate({
         scrollTop: $(".carousel").offset().top -20
     }, 1000);
 });
 
 $("#contacto").click(function(){
+  abrir();
   $('html, body').animate({
         scrollTop: $(".btn_contact").offset().top -20
     }, 1000);
@@ -218,10 +263,9 @@ console.log("hola");
 
 var frases=[
    "n. <span class='cyan' nm='0' id='item-frase'>The power</span> or act of seeing into a situation",
-   "n. <span class='cyan' nm='1' id='item-frase'>The power</span> po",
-   "n. <span class='cyan' nm='2' id='item-frase'>The power</span> pj",
-   "n. <span class='cyan' nm='3' id='item-frase'>The power</span> osdn",
-   "n. <span class='cyan' nm='4' id='item-frase'>The power</span> uation",
+   "n. <span class='cyan' nm='1' id='item-frase'> faculty of seeing </span>into inner character ",
+   "n. <span class='cyan' nm='2' id='item-frase'>an understanding  </span>of the motivational ",
+   "n. <span class='cyan' nm='3' id='item-frase'> penetrating mental vision</span> or discernment"
 ]
 
 
@@ -248,6 +292,71 @@ function change(){
 }
 
 
+//lIMITS MENU
+
+
+
+if (screen_w < 750) {
+
+$(".logo").animate({left:-129},1000);
+$(".ligh-flags").remove();
+$(".social").animate({left:189},1200);
+
+
+
+
+}else{
+
+
+
+setTimeout(function (){
+
+  abrir();
+
+}, 1000);
+
+
+
+$('.foot').scrollPoint({
+    up   : 2000,
+    down : 2200
+  });
+
+$(document).on('scrollPointEnter', '.foot', function() {
+    cerrar();
+  });
+
+$(document).on('scrollPointLeave', '.foot', function() {
+    abrir();
+  });
+
+
+
+  
+  }
+
+
+
+
+//     Mail
+
+
+
+
+$.ajax({
+  method: "POST",
+  url: "php/mail.php",
+  data: { 
+          name: $("#name").val(),
+          mail: $("#mail").val(),
+          msj:$("#msj").val() }
+})
+  .done(function( msg ) {
+
+   console.log( "Data Saved: " + msg );
+
+
+  });
 
 
 
