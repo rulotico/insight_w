@@ -18,33 +18,7 @@ var s;
 
 
 
-$( window ).scroll(function() {
 
-          if(screen_w < 640){
-
-            left_c=30;
-            right_c=30;
-
-            }else{
-
-            left_c=42;
-            right_c=60;
-
-            }
-
-
-  				 s=$(window).scrollTop();
-  				console.log("s:"+s);
-
-            if ( s > hh ) {
-              
-              $(".side_r").animate({left:left_c},2000);
-              $(".side_l").animate({right:right_c},2000);
-            };
-
-          
-
-});
 
 
 
@@ -309,6 +283,45 @@ $(".social").animate({left:189},1200);
 
 
 
+// --------------------SCROLL CIRCLE
+
+
+$( window ).scroll(function() {
+
+          if(screen_w < 640){
+
+            left_c=30;
+            right_c=30;
+
+            }else{
+
+            left_c=42;
+            right_c=60;
+
+            }
+
+
+           s=$(window).scrollTop();
+          console.log("s:"+s);
+
+            if ( s > hh ) {
+              
+              $(".side_r").animate({left:left_c},2000);
+              $(".side_l").animate({right:right_c},2000);
+            };
+
+          
+
+});
+
+
+//-------------------------
+
+
+
+
+
+
 setTimeout(function (){
 
   abrir();
@@ -329,6 +342,9 @@ $(document).on('scrollPointEnter', '.foot', function() {
 $(document).on('scrollPointLeave', '.foot', function() {
     abrir();
   });
+
+
+
 
 
 
@@ -357,6 +373,34 @@ $.ajax({
 
 
   });
+
+
+
+
+
+ //ROUTES
+
+
+ 
+
+
+      // Use sammy to detect hash changes
+      $.sammy(function(){
+          // bind to #:page where :page can be some value
+          // we're expecting and can be retrieved with this.params
+          this.get('#:quienes',function(){
+              // load some page using ajax in to an simple container
+              $('html, body').animate({
+                scrollTop: $(".titles").offset().top -20
+                 }, 1000);
+          });
+      }).run();
+
+
+
+
+
+  
 
 
 

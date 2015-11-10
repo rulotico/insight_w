@@ -74,6 +74,10 @@ a:hover, a:active, a:focus{
     text-decoration: none !important;
 }
 
+.logo_mobile{
+    display: none;
+}
+
 .headpic{
 	background-color: #252528;
 	 background: url(../images/fondo.png) no-repeat center center fixed; 
@@ -573,6 +577,7 @@ cursor: pointer;
     .legal{
             margin-top: 77px;
     margin-bottom: 20px;
+    text-align: center;
     }
     .left, .right{
         display: none;
@@ -594,16 +599,57 @@ cursor: pointer;
 }
 
 .sides img {
-    height: 300px;
+    height: 200px;
+}
+
+.side_r{
+    left: 20px;
+}
+
+.side_l{
+    right: 20px
+}
+
+.title_s{
+    font-size: 63px;
+}
+
+.btn_contact:hover{
+        left: -3px;
+            top: -200px;
+}
+
 }
 
 
+@media( max-width: 350px){
 
+
+
+.logo{
+    display: none;
+}
+
+.logo_mobile{
+    display: initial;
+    padding-bottom: 10px;
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    width: 100%;
+    padding-top: 10px;
+    
+}
+
+.social{
+    position: fixed;
+        margin-left: 10px;
+        top:4px;
 }
 
 
-
-
+}
 
 @media (width: 1200px ){
 
