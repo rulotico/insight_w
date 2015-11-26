@@ -85,7 +85,7 @@ $("#menu-toggle").click(function() {
 
 
 
-$("#quien").click(function(){
+$("#somos").click(function(){
   abrir();
   $('html, body').animate({
         scrollTop: $(".titles").offset().top -20
@@ -115,7 +115,7 @@ $("#contacto").click(function(){
 });
 
 //hover
-$("#quien").mouseover(function(){
+$("#somos").mouseover(function(){
   $("#l1").css("background-color","#3AFEFF");
 }).mouseleave(function(){
   $("#l1").css("background-color","#E5E5E5");
@@ -196,21 +196,7 @@ $(this).animate({opacity:1},500);
 
 
 //contact
-$(".btn_contact").mouseover(function(){
-$(".icn_mail").animate({paddingTop:32},500); 
-$(".env").css("display","inherit");
-$(".form").css("display","initial");
-$(".f1,.f2,.f3").css("opacity",1);
 
-});
-
-
-$(".btn_contact").mouseleave(function(){
-$(".form").css("display","none");
-$(".env").css("display","none");
-$(".icn_mail").animate({paddingTop:32},200); 
-
-});
 
 
 
@@ -275,11 +261,60 @@ if (screen_w < 750) {
 $(".logo").animate({left:-129},1000);
 $(".ligh-flags").remove();
 $(".social").animate({left:189},1200);
+$(".env").click(function(){
+    var email = 'contacto@insight.mx';
+    var subject = 'INSIGHT WEB';
+    var emailBody = 'web';
+    window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+});
 
 
 
 
 }else{
+
+
+
+
+
+//     Mail
+
+$(".btn_contact").mouseover(function(){
+$(".icn_mail").animate({paddingTop:32},500); 
+$(".env").css("display","inherit");
+$(".form").css("display","initial");
+$(".f1,.f2,.f3").css("opacity",1);
+
+});
+
+
+$(".btn_contact").mouseleave(function(){
+$(".form").css("display","none");
+$(".env").css("display","none");
+$(".icn_mail").animate({paddingTop:32},200); 
+
+});
+
+$("#mailto").click(function(){
+
+
+
+$.post( "php/mail.php", { name: $("#name").val(), mail: $("#mail").val(), msj: $("#msj").val() })
+  .done(function( data ) {
+    
+
+   $(".form").empty();
+$(".form").append("<h2 class='mensaje'>¡HEMOS RECIBIDO TU MENSAJE!</h2>");
+
+
+  });
+
+
+
+});
+
+
+
 
 
 
@@ -322,26 +357,6 @@ $( window ).scroll(function() {
 
 
 
-setTimeout(function (){
-
-  abrir();
-
-}, 1000);
-
-
-
-$('.foot').scrollPoint({
-    up   : 2000,
-    down : 2200
-  });
-
-$(document).on('scrollPointEnter', '.foot', function() {
-    cerrar();
-  });
-
-$(document).on('scrollPointLeave', '.foot', function() {
-    abrir();
-  });
 
 
 
@@ -354,53 +369,106 @@ $(document).on('scrollPointLeave', '.foot', function() {
 
 
 
-//     Mail
-
-
-
-
-$.ajax({
-  method: "POST",
-  url: "php/mail.php",
-  data: { 
-          name: $("#name").val(),
-          mail: $("#mail").val(),
-          msj:$("#msj").val() }
-})
-  .done(function( msg ) {
-
-   console.log( "Data Saved: " + msg );
-
-
-  });
-
-
 
 
 
  //ROUTES
 
+var app = $.sammy(function() {
 
+   // will run at #/route but not at #
+
+   this.get('#/somos', function() {
+    $('html, body').animate({
+        scrollTop: $(".titles").offset().top -20
+    }, 1000);
+   });
+
+   this.get('#/servicios', function() {
+    $('html, body').animate({
+        scrollTop: $(".serv_t").offset().top -20
+    }, 1000);
+   });
+
+    this.get('#/book', function() {
+    $('html, body').animate({
+        scrollTop: $(".carousel").offset().top -20
+    }, 1000);
+   });
+
+    this.get('#/contacto', function() {
+    $('html, body').animate({
+        scrollTop: $(".btn_contact").offset().top -20
+    }, 1000); 
+   });
+
+ });
  
 
 
-      // Use sammy to detect hash changes
-      $.sammy(function(){
-          // bind to #:page where :page can be some value
-          // we're expecting and can be retrieved with this.params
-          this.get('#:quienes',function(){
-              // load some page using ajax in to an simple container
-              $('html, body').animate({
-                scrollTop: $(".titles").offset().top -20
-                 }, 1000);
-          });
-      }).run();
+$(function() { // document.ready
+   app.run();
+});
 
 
 
 
+// MENSAJE
 
+
+
+//popbox
+
+// var c1="<p class='cont text-justify'>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod.</p>";
+
+// $("#ConsultoriaDigital").click(function(){
+
+//  $(this).append(c1);
+
+// });
+
+
+
+//AJUSTAR
+function ajustar(){
+  var serv_mod_left=$(".s_left").height();
+  var serv_mod_right=$(".s_right").height();;
+
+
+ while( serv_mod_right !== serv_mod_left){
+
+    if(serv_mod_left > serv_mod_right){$(".s_right").animate({minHeight: serv_mod_left},500);}
+    if(serv_mod_left < serv_mod_right){$(".s_left").animate({minHeight: serv_mod_right},500);}
+    break;
+
+  }
+
+};
+
+function wait(){
+
+  setTimeout(
+  function() 
+  {
+    ajustar();
+  }, 351);
+  //351
+
+}
+
+
+for (var i = 0; i < 16; i++) {
+
+i=String(i);
+console.log(i);
   
+$('#collapse'+ i).on('show.bs.collapse', function () {
+  wait();
+})
+
+
+};
+
 
 
 

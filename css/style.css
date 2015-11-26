@@ -257,6 +257,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJUlEQVQIW2
 
 
 .content_serv{
+        min-height: 623px;
         padding-top: 150px;
     padding-bottom: 35px;
     font-family: c_black;
@@ -296,6 +297,15 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJUlEQVQIW2
     position: relative;
     top: -278px;
 
+}
+
+.mensaje{
+        padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: left;
+    padding-left: 20px;
+    color: #c3c3c3;
+    letter-spacing: 1px;
 }
 
 .btn_contact{
@@ -339,6 +349,7 @@ cursor: pointer;
 
 }
 
+
 .icn_mail{
     padding-top: 32px;
 }
@@ -367,6 +378,19 @@ cursor: pointer;
     font-size: 10px;
     letter-spacing: 1px;
 }
+
+
+
+.cont{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    font-weight: 200;
+    color: #C9C9C9;
+    
+}
+
+
 /*SIDE BAR*/
 
 /*!
@@ -521,6 +545,10 @@ cursor: pointer;
     .serv_t{
         font-size: 73px;
  }
+ .content_serv{
+    min-height: 70  0px;
+}
+
 
 }
 
@@ -539,11 +567,15 @@ cursor: pointer;
     display: inherit;
 }
 
+
+
+
 }
 
 
 
 @media (max-width: 767px) {
+
     .block {
         margin-left: -20px;
         margin-right: -20px;
@@ -560,6 +592,7 @@ cursor: pointer;
         padding-right: 0px;
     }
     .content_serv{
+
         padding-top:0px; 
     }
     .slide{
@@ -582,6 +615,35 @@ cursor: pointer;
     .left, .right{
         display: none;
     }
+.btn_contact{
+/*background: url(../images/mail.png) center;
+background-color: black;
+height: 100px;
+width: 100px;
+
+
+
+border-radius: 58px;
+cursor: pointer;
+*/
+    margin-bottom: 20px!important;
+    z-index: 1000;
+    top: -38px!important;
+    position: absolute!important;
+    left: 44%!important;
+
+    width: 100px !important;
+    height: 100px !important;
+    background: #121212;
+    -moz-border-radius: 50%!important;
+    -webkit-border-radius: 50%!important;
+    border-radius: 50%!important;
+
+     transition:all 1s;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+
+}
 
 }
 
