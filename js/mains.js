@@ -86,7 +86,7 @@ $("#menu-toggle").click(function() {
 
 
 $("#somos").click(function(){
-  abrir();
+  
   $('html, body').animate({
         scrollTop: $(".titles").offset().top -20
     }, 1000);
@@ -94,21 +94,21 @@ $("#somos").click(function(){
 
 
 $("#servicios").click(function(){
-  abrir();
+  
   $('html, body').animate({
         scrollTop: $(".serv_t").offset().top -20
     }, 1000);
 });
 
 $("#book").click(function(){
-  abrir();
+  
   $('html, body').animate({
         scrollTop: $(".carousel").offset().top -20
     }, 1000);
 });
 
 $("#contacto").click(function(){
-  abrir();
+  
   $('html, body').animate({
         scrollTop: $(".btn_contact").offset().top -20
     }, 1000);
@@ -460,12 +460,13 @@ function wait(){
 for (var i = 0; i < 16; i++) {
 
 i=String(i);
-console.log(i);
   
 $('#collapse'+ i).on('show.bs.collapse', function () {
   wait();
 })
-
+$('#collapse'+ i).on('hide.bs.collapse', function () {
+  wait();
+})
 
 };
 
