@@ -75,6 +75,11 @@ $("#menu-toggle").click(function() {
 
 
 
+        _gaq.push(['_trackEvent', 'Logo', 'clicked'])//***********************************
+
+
+
+
     });
 
 
@@ -86,32 +91,44 @@ $("#menu-toggle").click(function() {
 
 
 $("#somos").click(function(){
-  
+   abrir();
   $('html, body').animate({
         scrollTop: $(".titles").offset().top -20
     }, 1000);
+
+ _gaq.push(['_trackEvent', 'Somos', 'clicked'])//***********************************
+
 });
 
 
 $("#servicios").click(function(){
-  
+   abrir();
   $('html, body').animate({
         scrollTop: $(".serv_t").offset().top -20
     }, 1000);
+
+ _gaq.push(['_trackEvent', 'Servicios', 'clicked'])//***********************************
+
 });
 
 $("#book").click(function(){
-  
+   abrir();
   $('html, body').animate({
         scrollTop: $(".carousel").offset().top -20
     }, 1000);
+
+ _gaq.push(['_trackEvent', 'Book', 'clicked'])//***********************************
+
 });
 
 $("#contacto").click(function(){
-  
+   abrir();
   $('html, body').animate({
         scrollTop: $(".btn_contact").offset().top -20
     }, 1000);
+
+ _gaq.push(['_trackEvent', 'Contacto', 'clicked'])//***********************************
+
 });
 
 //hover
@@ -261,11 +278,12 @@ if (screen_w < 750) {
 $(".logo").animate({left:-129},1000);
 $(".ligh-flags").remove();
 $(".social").animate({left:189},1200);
-$(".env").click(function(){
-    var email = 'contacto@insight.mx';
+
+$(".btn_contact").click(function(){
+    var email = 'contacto@insightads.mx';
     var subject = 'INSIGHT WEB';
-    var emailBody = 'web';
-    window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+    var emailBody = '';
+    window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +  emailBody;
 });
 
 
@@ -273,6 +291,29 @@ $(".env").click(function(){
 
 }else{
 
+
+setTimeout(function (){
+
+  abrir();
+
+}, 1000);
+
+
+
+$('.foot').scrollPoint({
+    up   : 2000,
+    down : 2200
+  });
+
+$(document).on('scrollPointEnter', '.foot', function() {
+    cerrar();
+  });
+
+$(document).on('scrollPointLeave', '.foot', function() {
+    abrir();
+  });
+
+  
 
 
 
@@ -348,23 +389,22 @@ $( window ).scroll(function() {
           
 
 });
-
-
-//-------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-  
   }
+
+
+
+
+
+
+
+//---------BOTTOM TOGGLE
+
+
+
+
+
+
+
 
 
 
@@ -451,7 +491,7 @@ function wait(){
   function() 
   {
     ajustar();
-  }, 351);
+  }, 400);
   //351
 
 }

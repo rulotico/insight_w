@@ -10,7 +10,7 @@
 
 
 
-					$to  = 'contacto@insight.mx';
+					$to  = 'contacto@insightads.mx';
 
 					// subject
 					$subject = 'InsightAds Web tiene un mensaje para ti. :D';
